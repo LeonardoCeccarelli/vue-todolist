@@ -26,6 +26,9 @@ new Vue({
 
             this.listTasks.push(this.newTask)
             this.newTask = ""
+        },
+        onClickBtnRemove(i) {
+            return this.listTasks.splice(i, 1)
         }
     }
 })

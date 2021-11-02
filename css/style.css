@@ -58,7 +58,7 @@ ul li {
     flex-wrap: wrap;
     justify-content: center;
     width: 480px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
 }
 
 .list_container li {
@@ -69,7 +69,7 @@ ul li {
     border-radius: 5px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
 }
 
 .line_right {
@@ -94,4 +94,9 @@ ul li {
 .btn_delete i {
     color: grey;
     font-size: 25px;
+    transition: all .3s linear;
+}
+
+.btn_delete i:hover {
+    color: black;
 }

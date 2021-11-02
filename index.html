@@ -37,9 +37,10 @@
                 <!-- Lista cose da fare -->
                 <ul class="list_container">
                     <li v-for="(element, index) in listTasks">
-                        <h2>{{ element }}</h2>
+                        <h3>{{ index + 1 }} - {{ element }}</h3>
                         <div class="line_right"></div>
-                        <button type="button" class="btn_delete"><i class="fas fa-times"></i></button>
+                        <button type="button" @click="onClickBtnRemove(index)" class="btn_delete"><i
+                                class="fas fa-times"></i></button>
                     </li>
                 </ul>
             </div>
