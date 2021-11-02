@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- link FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- link mio CSS -->
+    <link rel="stylesheet" href="css/bonus.css">
+
+    <!-- link CDN VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <title>Vue - ToDoList - Bonus</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+        <header>
+            <h1>Hello Vueoolean - Todolist - Bonus</h1>
+        </header>
+
+        <main>
+            <div class="container">
+                <!-- Controlli input -->
+                <div class="input_area">
+                    <input type="color" class="choose_color" v-model="newTaskColor">
+                    <input type="text" class="text_bar" v-model="newTask" @keyup.enter="onClickBtnAdd"
+                        placeholder="Vorrei. . .">
+                    <button @click="onClickBtnAdd" type="button">Aggiungi</button>
+                </div>
+
+                <!-- Lista cose da fare -->
+                <ul class="list_container">
+                    <li v-for="(element, index) in listTasks">
+                        <input type="checkbox" v-model="element.check">
+                        <h3 :style="element.check? 'text-decoration: line-through;' : ''">
+                            {{ index + 1 }} - {{
+                            element.text }}
+                        </h3>
+                        <div class="line_right" :style="'background-color: ' + element.color"></div>
+                        <button type="button" @click="onClickBtnRemove(index)" class="btn_delete"><i
+                                class="fas fa-times"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+
+    </div>
+
+    <script src="js/bonus.js"></script>
+
+</body>
+
+</html>
