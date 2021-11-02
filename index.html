@@ -23,11 +23,26 @@
     <div id="root">
 
         <header>
-
+            <h1>Hello Vueoolean - Todolist</h1>
         </header>
 
         <main>
+            <div class="container">
+                <!-- Controlli input -->
+                <div class="input_area">
+                    <input type="text" v-model="newTask" @keyup.enter="onClickBtnAdd" placeholder="Vorrei. . .">
+                    <button @click="onClickBtnAdd" type="button">Aggiungi</button>
+                </div>
 
+                <!-- Lista cose da fare -->
+                <ul class="list_container">
+                    <li v-for="(element, index) in listTasks">
+                        <h2>{{ element }}</h2>
+                        <div class="line_right"></div>
+                        <button type="button" class="btn_delete"><i class="fas fa-times"></i></button>
+                    </li>
+                </ul>
+            </div>
         </main>
 
         <footer>
